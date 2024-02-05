@@ -65,7 +65,7 @@
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #088d40;
     }
   </style>
 </head>
@@ -73,7 +73,7 @@
 
   <div class="login-container">
     <h2>Ingreso</h2>
-    <form action="procesar_login.php" method="post">
+    <form id="loginForm" action="procesar_login.php" method="post">
       <label for="username">Usuario:</label>
       <input type="text" id="username" name="username" required>
 
@@ -83,6 +83,17 @@
       <button type="submit">Iniciar sesión</button>
     </form>
   </div>
+
+  <script>
+    // Agregar un evento de escucha al formulario
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      // Prevenir el envío del formulario por defecto
+      event.preventDefault();
+
+      // Redirigir a otra vista (otro archivo HTML)
+      window.location.href = 'operario/';
+    }); 
+  </script>
 
 </body>
 </html>

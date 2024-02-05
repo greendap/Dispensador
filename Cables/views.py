@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def home(request):
          return render(request, 'Cables/Home.html')
+
+def operario(request):
+        return render(request, 'Cables/Operario.html')
