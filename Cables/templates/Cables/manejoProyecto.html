@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <title>Manejo Proyectos - Administrador</title>
+  <br>
+  <h3>Manejo Proyectos - Administrador</h3>
+</body>
+
+<div class="container text-center">
+  <div class="row py-5 align-items-start">
+    <div class="col-4">
+      <label for="floatingInput">Proyecto</label>
+      <input type="proyecto" class="form-control" id="floatingInput" placeholder="🔍 Proyecto">
+    </div>
+  </div>
+  <div class="container text-center">
+    <div class="row py-3 align-items-start">
+      <div class="col">
+        <label for="floatingInput">CLIENTE</label>
+        <input type="cliente" class="form-control" id="floatingInput" placeholder="➕ Cliente">
+      </div>
+      <div class="col">
+        <label for="floatingInput">PROYECTO</label>
+        <input type="proyecto" class="form-control" id="floatingInput" placeholder="➕ Proyecto">
+      </div>
+      <div class="col">
+        <label for="floatingInput"># OT</label>
+        <input type="ordent" class="form-control" id="floatingInput" placeholder="➕ # OT">
+      </div>
+    </div>
+  </div>
+  <div class="row py-5 align-items-start">
+    <div class="row">
+      <h4 class="display-4">Proyecto</h4>
+    </div>
+   <div class="row py-4">
+    <div class="col">
+      <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th scope="col">GLOBAL</th>
+            <th scope="col"># OT</th>
+            <th scope="col">ITEM</th>
+            <th scope="col">DESCRIPCIÓN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>240108</td>
+            <td>1</td>
+            <td>TABLERO 1</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>240108</td>
+            <td>2</td>
+            <td>TABLERO 2</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>240108</td>.
+            <td>3</td>
+            <td>TABLERO 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   </div>
+  </div>
+  <div class="row py-2 align-items-start">
+    <div class="col">
+      <h5 class="display-7">ASIGNAR PROYECTO</h5>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Seleccione Tablero</option>
+        <option value="1">1-1</option>
+        <option value="2">1-2</option>
+        <option value="3">1-3</option>
+      </select>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-warning">EDITAR</button>
+        <button type="button" class="btn btn-primary">GUARDAR</button>
+    </div>
+  </div>
+</div>
+</html>
