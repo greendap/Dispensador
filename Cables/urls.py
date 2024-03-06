@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import home, operario,  auditor, superA, manejoProyecto, inforAuditor, usuarios
-
-
+from .views import home, operario,  auditor, superA, manejoProyecto, inforAuditor, usuarios, prueba
+"""
+from django.conf import settings
+from django.conf.urls.static import static
+"""
 urlpatterns = [
     path('', home, name="home"),
     path('operario/', operario, name="operario"),
@@ -10,7 +12,10 @@ urlpatterns = [
     path('manejoProyecto/', manejoProyecto, name="manejoProyecto"),
     path('inforAuditor/', inforAuditor, name="inforAuditor"),
     path('usuarios/', usuarios, name="usuarios"),
-
-  
+    path('prueba/', prueba, name="prueba"),
 
 ]
+"""
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+"""

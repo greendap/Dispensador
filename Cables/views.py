@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Proyecto
 
 # Create your views here.
 
@@ -23,6 +24,10 @@ def inforAuditor(request):
 
 def usuarios(request):
         return render(request, 'Cables/usuarios.html')
+
+def prueba(request):
+        proyectos = Proyecto.objects.all()
+        return render(request, 'Cables/prueba.html', {"proyectos": proyectos})
 
 
 
