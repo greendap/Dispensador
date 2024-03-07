@@ -25,27 +25,33 @@
 </head>
 <body>
 
-<div class="container text-center">
-  <div class="row justify-content-center">
-    <div class="col-4">
-      <form id="loginForm" action="/login" method="post">
-      <h4 class="text-light ">Ingrese Usuario</h4>
-      <input type="text" class="form-control" id="username" placeholder="Código" name="username" required>
-    </div> 
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <form id="loginForm" action="/login" method="post">
+        <h4 class="text-light ">Ingrese Usuario</h4>
+        <input type="text" class="form-control" id="username" placeholder="Código" name="username" required>
+      </div> 
+    </div>
+    <div class="row py-3 justify-content-center">
+      <div class="col-4">
+        <h4 class="text-light ">Ingrese Contraseña</h4>
+        <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password" required>
+      </div> 
+    </div>
+    <div class="row py-3 justify-content-center">
+      <div class="col-4">
+        <button class="btn btn-primary w-100 py-2" type="submit">Iniciar Sesión</button>
+        <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+      </div> 
+    </div>
   </div>
-  <div class="row py-3 justify-content-center">
-    <div class="col-4">
-      <h4 class="text-light ">Ingrese Contraseña</h4>
-      <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password" required>
-    </div> 
+  <div>
+    <ul>
+      <h1><a href="{% url 'prueba' %}">prueba</a></hi>
+    
+    </ul>
   </div>
-  <div class="row py-3 justify-content-center">
-    <div class="col-4">
-      <button class="btn btn-primary w-100 py-2" type="submit">Iniciar Sesión</button>
-      <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
-    </div> 
-  </div>
-</div>
 
   
   <script>
@@ -59,7 +65,9 @@
       
     }); 
   </script>
-  
+
+ 
+
 
 </body>
 </html>

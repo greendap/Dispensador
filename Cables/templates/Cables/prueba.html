@@ -1,19 +1,52 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de Sesion</title>
- 
-</head>
-<body>
-  <ul>
-      {% for c in proyectos %}
-      <li>{{c.nombre}}</li>
-      {% endfor %}
-  </ul>
+{% extends "./base.html" %}
 
-  
+{% block body%}
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+      <h2>Gestión de proyectos</h2>
+      <div class="card">
+        <div class="card-body">
+          <form action="" method="POST">
+            <div class="form-group">
+              <input type="text" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Codigo" minlength="8" maxlength="8" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre" maxlength="50" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="txtCliente" name="txtCliente" class="form-control" placeholder="Cliente" maxlength="8" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-succes btn-block txt-white">GUARDAR</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <h1>LISTA DE PROYECTOS</h1>
+        <div class="table-responsive py-2">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Cliente</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for c in proyectos %}
+              <tr>
+                <td>{{c.codigo}}</td>
+                <td>{{c.nombre}}</td>
+                <td>{{c.cliente}}</td>
+              </tr>
+              {% endfor%}
+            </tbody>
+          </table>
 
-</body>
-</html>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
