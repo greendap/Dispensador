@@ -29,20 +29,22 @@
           <table class="table table-striped">
             <thead>
               <tr>
+                <th>#</th>
                 <th>Codigo</th>
                 <th>Nombre</th>
                 <th>Cliente</th>
-                <th coldspan="2">Opciones</th>
+                <th colspan="2">Opciones</th>
               </tr>
             </thead>
             <tbody>
               {% for c in proyectos %}
               <tr>
+                <td>{{forloop.counter}}</td>
                 <td>{{c.codigo}}</td>
                 <td>{{c.nombre}}</td>
                 <td>{{c.cliente}}</td>
                 <td><a href="/editarProyecto/{{c.codigo}}" class="btn btn-info">EDITAR</a></td>
-                <td><a href="eliminarProyecto/{{c.codigo}}" class="btn btn-danger">ELIMINAR</a></td>
+                <td><a href="eliminarProyecto/{{c.codigo}}" class="btn btn-danger btnEliminacion">ELIMINAR</a></td>
               </tr>
               {% endfor%}
             </tbody>
