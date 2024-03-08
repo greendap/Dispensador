@@ -1,0 +1,27 @@
+{% extends "./base.html" %}
+
+{% block body%}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edición de proyectos</h2>
+        <div class="card">
+          <div class="card-body">
+            <form action="/modificarProyecto/" method="POST">{% csrf_token%}
+              <div class="form-group mb-3">
+                <input type="text" id="txtCodigo" name="txtCodigo" value="{{proyecto.codigo}}" class="form-control" placeholder="Codigo" minlength="8" maxlength="8" readonly required>
+              </div>
+              <div class="form-group mb-3">
+                <input type="text" id="txtNombre" name="txtNombre" value="{{proyecto.nombre}}" class="form-control" placeholder="Nombre" maxlength="50" required>
+              </div>
+              <div class="form-group mb-3" >
+                <input type="text" id="txtCliente" name="txtCliente" value="{{proyecto.cliente}}"  class="form-control" placeholder="Cliente" maxlength="60" required>
+              </div>
+              <div class="form-group d-grid w-100" >
+                <button type="submit" class="btn btn-success">GUARDAR</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
