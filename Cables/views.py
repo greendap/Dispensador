@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Proyecto
 
@@ -29,6 +29,34 @@ def prueba(request):
         proyectos = Proyecto.objects.all()
         return render(request, 'Cables/prueba.html', {"proyectos": proyectos})
 
+def crearproyectos(request):
+        codigo = request.POST['txtCodigo']
+        nombre = request.POST['txtNombre']
+        cliente = request.POST['txtCliente']
+
+        proyecto = Proyecto.objects.create(codigo=codigo, nombre=nombre, cliente=cliente)
+        return redirect('/prueba')
+
+def editarProyecto(request, codigo):
+        proyecto = Proyecto.objects.get(codigo=codigo)
+        return render(request, "Cables/editarProyecto.html", {"proyecto":proyecto})
+
+def modificarProyecto(request):
+        codigo = request.POST['txtCodigo']
+        nombre = request.POST['txtNombre']
+        cliente = request.POST['txtCliente']
+
+        proyecto = Proyecto.objects.get(codigo=codigo)
+        proyecto.nombre = nombre
+        proyecto.cliente = cliente
+        proyecto.save()
+
+        return redirect('/prueba')
+
+def eliminarProyecto(request, codigo):
+        proyecto = Proyecto.objects.get(codigo=codigo)
+        proyecto.delete()
+        return redirect('/prueba')
 
 
 
