@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Proyecto
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
@@ -28,6 +29,11 @@ def usuarios(request):
 def prueba(request):
         proyectos = Proyecto.objects.all()
         return render(request, 'Cables/prueba.html', {"proyectos": proyectos})
+
+def login(request):
+         return render(request, 'Cables/login.html', {
+                 'form' : UserCreationForm
+         })
 
 def crearproyectos(request):
         codigo = request.POST['txtCodigo']
